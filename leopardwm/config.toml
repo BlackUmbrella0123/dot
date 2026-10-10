@@ -1,0 +1,155 @@
+[layout]
+gap = 16
+outer_gap_left = 16
+outer_gap_right = 16
+outer_gap_top = 16
+outer_gap_bottom = 16
+centering_mode = "center"
+center_past_edges = false
+width_presets = [
+    0.333,
+    0.5,
+    1.0,
+]
+default_width_preset = 3
+height_presets = [
+    0.333,
+    0.5,
+    0.667,
+]
+
+[appearance]
+active_border = true
+active_border_color = "0078D4"
+active_border_width = 4
+active_border_position = "outside"
+tab_strip_height = 24
+tab_strip_bg = "000000"
+tab_strip_active_bg = "545454"
+tab_strip_active_text = "FFFFFF"
+tab_strip_inactive_text = "A0A0A0"
+tab_strip_opacity = 255
+
+[behavior]
+focus_new_windows = true
+track_focus_changes = true
+log_level = "info"
+focus_follows_mouse = false
+focus_follows_mouse_delay_ms = 100
+disable_snap_layouts = true
+check_for_updates = true
+tab_close_action = "close_window"
+swap_chain_ghost_animation = true
+new_window_placement = "new_column"
+hide_offscreen_taskbar_buttons = true
+workspace_edge_wrap = false
+mouse_follows_focus = false
+fullscreen_follows_focus = true
+
+[hotkeys]
+scroll_modifier = "Ctrl+Alt"
+disabled = [
+    "focus_up",
+    "focus_down",
+    "focus_start",
+    "focus_end",
+    "move_column_to_start",
+    "move_column_to_end",
+    "move_window_left",
+    "move_window_right",
+    "expel_to_left",
+    "expel_to_right",
+    "consume_from_left",
+    "consume_from_right",
+    "move_window_up",
+    "move_window_down",
+    "equalize_widths",
+    "cycle_height_down",
+    "cycle_height_up",
+    "equalize_heights",
+    "focus_monitor_up",
+    "focus_monitor_down",
+    "move_to_monitor_up",
+    "move_to_monitor_down",
+    "maximize_column",
+    "toggle_tabbed",
+    "scratchpad_toggle",
+    "scratchpad_stash",
+    "toggle_sticky",
+    "toggle_pause",
+    "refresh",
+    "panic_revert",
+    "workspace_prev",
+    "workspace_next",
+    "move_to_workspace_prev",
+    "move_to_workspace_next",
+    "switch_workspace_5",
+    "switch_workspace_6",
+    "switch_workspace_7",
+    "switch_workspace_8",
+    "switch_workspace_9",
+    "move_to_workspace_5",
+    "move_to_workspace_6",
+    "move_to_workspace_7",
+    "move_to_workspace_8",
+    "move_to_workspace_9",
+]
+"Alt+." = "focus_monitor_right"
+"Alt+4" = "switch_workspace_4"
+"Alt+Shift+4" = "move_to_workspace_4"
+"Alt+Shift+." = "move_to_monitor_right"
+"Alt+F" = "toggle_fullscreen"
+"Alt+Shift+3" = "move_to_workspace_3"
+"Alt+Shift+F" = "toggle_floating"
+"Alt+Shift+," = "move_to_monitor_left"
+"Alt+Shift+R" = "reload"
+"Alt+Shift+Space" = "toggle_overview"
+"Alt+Shift+=" = "cycle_width_up"
+"Alt+H" = "focus_left"
+"Alt+Shift+L" = "move_column_right"
+"Alt+3" = "switch_workspace_3"
+"Alt+Shift+2" = "move_to_workspace_2"
+"Alt+Shift+Q" = "close_window"
+"Alt+Shift+-" = "cycle_width_down"
+"Alt+," = "focus_monitor_left"
+"Alt+Shift+1" = "move_to_workspace_1"
+"Alt+L" = "focus_right"
+"Alt+Shift+C" = "center_column"
+"Alt+Shift+H" = "move_column_left"
+"Alt+1" = "switch_workspace_1"
+"Alt+2" = "switch_workspace_2"
+
+[[window_rules]]
+match_class = "MozillaDialogClass"
+action = "tile"
+corner_style = "square"
+open_maximized = false
+sticky = false
+
+[gestures]
+enabled = false
+swipe_left = ""
+swipe_right = ""
+swipe_up = ""
+swipe_down = ""
+scroll_up = ""
+scroll_down = ""
+
+[snap_hints]
+enabled = true
+duration_ms = 200
+opacity = 128
+
+[animation]
+layout_duration_ms = 150
+workspace_switch_duration_ms = 200
+scroll_duration_ms = 200
+overview_duration_ms = 150
+easing = "ease_out"
+reduce_motion_on_battery = true
+
+[workspaces]
+names = []
+
+[overview]
+render = "live"

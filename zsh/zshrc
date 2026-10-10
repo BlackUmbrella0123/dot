@@ -1,0 +1,4 @@
+export PATH="/opt/homebrew/opt/python@3.12/libexec/bin:$PATH"
+alias ls="lsd"
+alias tree="lsd --tree"
+alias vim="nvim"

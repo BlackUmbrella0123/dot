@@ -1,0 +1,106 @@
+// Keyboard Setup
+input {
+  keyboard {
+    xkb {
+    }
+  }
+  touchpad {
+    // off
+    tap
+    natural-scroll
+  }
+  mouse {
+    off
+  }
+  trackpoint {
+    off
+  }
+}
+
+// Layout Setup
+layout {
+  gaps 4
+  center-focused-column "never"
+  preset-column-widths {
+    proportion 0.33333
+    proportion 0.5
+    proportion 0.66667
+  }
+  default-column-width { proportion 1.0; }
+  focus-ring {
+    width 4
+    active-color "#7fc8ff"
+    inactive-color "#505050"
+  }
+  border {
+    off
+  }
+  shadow {
+    off
+  }
+}
+
+// Auto Startup
+// spawn-at-startup "waybar" // Dependency: waybar
+
+// Animation
+animations {
+  // off
+  slowdown 1.0
+}
+
+// Window Rules
+window-rule {
+  geometry-corner-radius 4
+  clip-to-geometry true
+}
+window-rule {
+  match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+  open-floating true
+}
+
+// Keybindings
+binds {
+  Alt+Shift+Slash { show-hotkey-overlay; }
+  Alt+Return hotkey-overlay-title="Open a Terminal: foot" { spawn "foot"; } // Dependency: foot
+  Alt+Space hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; } // Dependency: fuzzel
+  XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1+ -l 1.0"; }
+  XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.1-"; }
+  XF86AudioMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+  XF86AudioMicMute allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+  XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+  XF86AudioPause allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+  XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
+  XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+  XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
+  XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+5%"; }
+  XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "5%-"; }
+  Alt+Shift+Space repeat=false { toggle-overview; }
+  Alt+Shift+Q repeat=false { close-window; }
+  Alt+H { focus-column-left; }
+  Alt+L { focus-column-right; }
+  Alt+Shift+H { move-column-left; }
+  Alt+Shift+L { move-column-right; }
+  Alt+Comma { focus-monitor-left; }
+  Alt+Period { focus-monitor-right; }
+  Alt+Shift+Comma { move-column-to-monitor-left; }
+  Alt+Shift+Period { move-column-to-monitor-right; }
+  Alt+1 { focus-workspace 1; }
+  Alt+2 { focus-workspace 2; }
+  Alt+3 { focus-workspace 3; }
+  Alt+4 { focus-workspace 4; }
+  Alt+Shift+1 { move-column-to-workspace 1; }
+  Alt+Shift+2 { move-column-to-workspace 2; }
+  Alt+Shift+3 { move-column-to-workspace 3; }
+  Alt+Shift+4 { move-column-to-workspace 4; }
+  Alt+R { switch-preset-column-width; }
+  Alt+Shift+R { switch-preset-column-width-back; }
+  Alt+F { maximize-column; }
+  Alt+Shift+F { toggle-window-floating; }
+  Alt+Minus { set-column-width "-5%"; }
+  Alt+Equal { set-column-width "+5%"; }
+  Print { screenshot; }
+  Ctrl+Print { screenshot-screen; }
+  Alt+Print { screenshot-window; }
+  Alt+Shift+E { quit; }
+}
