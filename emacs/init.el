@@ -2,6 +2,7 @@
 
 ;;; Commentary:
 
+;;;; Reference:
 ;;;; https://github.com/seagle0128/.emacs.d/tree/master
 ;;;; https://github.com/redguardtoo/emacs.d/tree/master
 ;;;; https://github.com/MiniApollo/kickstart.emacs
@@ -24,6 +25,7 @@
   (use-package-always-ensure t)
   (use-package-always-defer t)
   (use-package-expand-minimally t)
+	(use-package-compute-statistics t)
   (use-package-enable-imenu-support t))
 
 (use-package package
@@ -118,6 +120,11 @@
   :hook
   (after-init . global-auto-revert-mode))
 
+(use-package loaddefs
+	:ensure nil
+	:hook
+	(after-init . save-place-mode))
+
 (use-package which-key
   :hook
   (after-init . which-key-mode)
@@ -137,10 +144,10 @@
   (setq dashboard-icon-type 'nerd-icons)
   (setq dashboard-set-heading-icons t)
   (setq dashboard-set-file-icons t)
-  (setq dashboard-icon-file-height 1.25)
-  (setq dashboard-icon-file-v-adjust -0.125)
-  (setq dashboard-heading-icon-height 1.25)
-  (setq dashboard-heading-icon-v-adjust -0.125)
+  (setq dashboard-icon-file-height 1.5)
+  (setq dashboard-icon-file-v-adjust -0.15)
+  (setq dashboard-heading-icon-height 1.5)
+  (setq dashboard-heading-icon-v-adjust -0.15)
   (setq dashboard-heading-shorcut-format " [%s]")
   (setq dashboard-item-shortcuts '((recents   . "r")
                                    (bookmarks . "m")
@@ -153,38 +160,17 @@
                           (agenda . 3)
                           (registers . 3))))
 
-;; (use-package nord-theme)
-;; (use-package nordic-night-theme)
-;; (use-package zenburn-theme)
-;; (use-package spacemacs-theme)
-;; (use-package gruvbox-theme)
-;; (use-package moe-theme)
-;; (use-package ef-themes)
-;; (use-package standard-themes)
-;; (use-package tokyo-night)
-;; (use-package kusanagi-theme)
-;; (use-package kanagawa-themes)
-;; (use-package atom-one-dark-theme)
-;; (use-package base16-theme)
-;; (use-package material-theme)
-;; (use-package solarized-theme)
-;; (use-package atom-one-dark-theme)
-;; (use-package github-dark-vscode-theme)
-;; (use-package batppuccin)
-;; (use-package color-theme-sanityinc-tomorrow)
-;; (use-package color-theme-sanityinc-solarized)
-;; (use-package doom-themes
-;;   :hook
-;;   (after-init . (lambda () (load-theme 'doom-one t))))
-(use-package catppuccin-theme
+(use-package batppuccin
   :init
-  (setq catppuccin-flavor 'mocha)
+  (setq batppuccin-italic-comments t)
+  (setq batppuccin-flat-mode-line t)
+  (setq batppuccin-override-colors-alist
+        '(("bat-base" . "#11111b")
+          ("bat-mantle" . "#11111b")))
   :hook
   (after-init . (lambda ()
-                  (load-theme 'catppuccin t)
-                  (catppuccin-set-color 'base "#11111b")
-                  (catppuccin-set-color 'mantle "#11111b")
-                  (catppuccin-reload))))
+                  (load-theme 'batppuccin-mocha t)
+                  (set-face-attribute 'line-number-current-line nil :foreground "#a6e3a1" :background 'unspecified :weight 'bold))))
 
 (use-package doom-modeline
   :hook
@@ -193,10 +179,6 @@
   (setq doom-modeline-height 25)
   (setq doom-modeline-bar-width 5)
   (setq doom-modeline-minor-modes t))
-
-(use-package mode-line-bell
-  :hook
-  (doom-modeline-mode . mode-line-bell-mode))
 
 (use-package hide-mode-line
   :hook
@@ -469,16 +451,12 @@
   (after-init . winum-mode))
 
 (use-package company
+	:after nerd-icons
   :hook
   (prog-mode . company-mode)
-	:custom-face
-	(company-tooltip ((t (:inherit default))))
+  :custom-face
+  (company-tooltip ((t (:inherit default))))
   :config
-  (setq company-idle-delay 0.24)
-  (setq company-tooltip-limit 12)
-  (setq company-minimum-prefix-length 1)
-  (setq company-selection-wrap-around 'on)
-  (setq company-tooltip-align-annotations t)
   (defun my/company-backend-with-yas (backend)
     (if (or (not (listp backend))
             (member 'company-yasnippet backend))
@@ -487,19 +465,17 @@
                   (list backend))
                 '(:with company-yasnippet))
       backend))
-  (setq company-backends
-        (mapcar #'my/company-backend-with-yas company-backends)))
-
-(use-package company-box
-  :when (display-graphic-p)
-  :hook
-  (company-mode . company-box-mode)
-  :config
-  (setq company-box-doc-delay 0.3))
+  (setq company-idle-delay 0.24)
+  (setq company-tooltip-limit 12)
+  (setq company-minimum-prefix-length 1)
+  (setq company-tooltip-align-annotations t)
+	(setq company-format-margin-function 'company-text-icons-margin)
+	(setq company-backends
+				(mapcar #'my/company-backend-with-yas company-backends)))
 
 (use-package flx)
 (use-package company-fuzzy
-	:after (company flx)
+  :after (company flx)
   :init
   (setq company-fuzzy-sorting-backend 'flx)
   (setq company-fuzzy-prefix-on-top nil)
@@ -535,6 +511,15 @@
   (setq lua-indent-level 2)
   (setq lua-indent-nested-block-content-align nil)
   (setq lua-indent-close-paren-align nil))
+
+(use-package clutch
+  :commands clutch-query-sqlite-file
+  :config
+  (setq clutch-connect-timeout-seconds 10)
+  (setq clutch-read-idle-timeout-seconds 30)
+  (setq clutch-query-timeout-seconds 20)
+  (setq clutch-jdbc-rpc-timeout-seconds 15)
+  (setq clutch-jdbc-validate-after-idle-seconds 300))
 
 (use-package dotenv-mode)
 (use-package toml-mode)

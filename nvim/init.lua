@@ -1018,52 +1018,6 @@ local catppuccin_setup = {
 		vim.cmd.colorsche("catppuccin")
 	end,
 }
-local nordic_setup = {
-	"AlexvZyl/nordic.nvim",
-	config = function()
-		require("nordic").setup({
-			on_palette = function(palette) end,
-			after_palette = function(palette) end,
-			on_highlight = function(highlights, palette)
-				highlights.Normal = { fg = palette.fg, bg = palette.black0 }
-			end,
-			bold_keywords = true,
-			italic_comments = true,
-			transparent = {
-				bg = false,
-				float = false,
-			},
-			bright_border = true,
-			reduced_blue = false,
-			swap_backgrounds = false,
-			cursorline = {
-				bold = true,
-				bold_number = true,
-				theme = "dark",
-				blend = 0.85,
-			},
-			visual = {
-				bold = false,
-				bold_number = true,
-				theme = "dark",
-				blend = 0.85,
-			},
-			noice = {
-				style = "classic",
-			},
-			telescope = {
-				style = "flat",
-			},
-			leap = {
-				dim_backdrop = false,
-			},
-			ts_context = {
-				dark_background = true,
-			},
-		})
-		require("nordic").load()
-	end,
-}
 local treesitter_setup = {
 	"nvim-treesitter/nvim-treesitter",
 	lazy = false,
@@ -1103,8 +1057,9 @@ local extra_plugins = {
 	astro = {},
 	nvchad = {},
 	mini = {},
-	self = { nordic_setup },
+	self = {},
 	all = {
+		catppuccin_setup,
 		treesitter_setup,
 		mason_setup,
 	},
