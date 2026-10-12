@@ -205,6 +205,7 @@ if vim.g.profile == "lazyvim" then
 		{ import = "lazyvim.plugins.extras.lang.json" },
 		{ import = "lazyvim.plugins.extras.lang.python" },
 		{ import = "lazyvim.plugins.extras.lang.toml" },
+		{ import = "lazyvim.plugins.extras.lang.typescript" },
 		{ import = "lazyvim.plugins.extras.lang.yaml" },
 		{ import = "lazyvim.plugins.extras.lsp.none-ls" },
 		{ import = "lazyvim.plugins.extras.ui.treesitter-context" },
@@ -256,6 +257,7 @@ if vim.g.profile == "astro" then
 		{ import = "astrocommunity.pack.json" },
 		{ import = "astrocommunity.pack.python" },
 		{ import = "astrocommunity.pack.toml" },
+		{ import = "astrocommunity.pack.typescript-all-in-one" },
 		{ import = "astrocommunity.pack.yaml" },
 		{ import = "astrocommunity.programming-language-support.csv-vim" },
 	}
@@ -1059,7 +1061,6 @@ local extra_plugins = {
 	mini = {},
 	self = {},
 	all = {
-		catppuccin_setup,
 		treesitter_setup,
 		mason_setup,
 	},
