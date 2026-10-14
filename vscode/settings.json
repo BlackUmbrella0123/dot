@@ -1,12 +1,11 @@
 {
-  // BUILTIN
-  "workbench.colorTheme": "Catppuccin Mocha",
-  "workbench.iconTheme": "catppuccin-mocha",
   "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, menlo, Consolas",
   "editor.fontSize": 12,
   "editor.tabSize": 2,
   "editor.minimap.enabled": false,
   "window.zoomLevel": 0,
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.iconTheme": "catppuccin-mocha",
   "workbench.startupEditor": "none",
   "workbench.enableExperiments": false,
   "editor.semanticHighlighting.enabled": true,
@@ -17,6 +16,9 @@
   },
   "[python]": {
     "editor.tabSize": 4,
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   // Vim
   "vim.leader": "<space>",
