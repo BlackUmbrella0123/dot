@@ -1,0 +1,88 @@
+line-height = 1.2
+option-as-alt = 'left'
+confirm-before-quit = false
+margin = [12]
+
+[fonts]
+size = 13
+features = []
+use-drawable-chars = true
+symbol-map = []
+disable-warnings-not-found = false
+additional-dirs = []
+
+[fonts.regular]
+family = "JetBrainsMono Nerd Font"
+style = "default"
+
+[fonts.bold]
+family = "JetBrainsMono Nerd Font"
+style = "default"
+
+[fonts.italic]
+family = "JetBrainsMono Nerd Font"
+style = "default"
+
+[fonts.bold-italic]
+family = "JetBrainsMono Nerd Font"
+style = "default"
+
+[window]
+width = 1200
+height = 800
+
+[bell]
+audio = false
+visual = true
+tab-indicator = true
+
+[cursor]
+shape = 'block'
+blinking = false
+
+[colors]
+foreground = '#bbbebf'
+background = '#121314'
+black = '#202122'
+blue = '#79c0ff'
+cyan = '#4ec9b0'
+green = '#7ee787'
+magenta = '#d2a8ff'
+red = '#ff7b72'
+white = '#bbbebf'
+yellow = '#cd9731'
+dim-black = '#202122'
+dim-blue = '#79c0ff'
+dim-cyan = '#4ec9b0'
+dim-green = '#7ee787'
+dim-magenta = '#b267e6'
+dim-red = '#ff7b72'
+dim-white = '#bbbebf'
+dim-yellow = '#cd9731'
+light-black = '#555555'
+light-blue = '#a5d6ff'
+light-cyan = '#71d4c0'
+light-foreground = '#ffffff'
+light-green = '#91eb99'
+light-magenta = '#d2a8ff'
+light-red = '#ffa198'
+light-white = '#ffffff'
+light-yellow = '#ffa657'
+cursor = '#ff7b72'
+vi-cursor = '#ff7b72'
+tabs = '#555555'
+tabs-active = '#ffffff'
+split = '#555555'
+split-active = '#ffffff'
+selection-background = '#7ee787'
+selection-foreground = '#121314'
+search-match-foreground = '#121314'
+search-match-background = '#cd9731'
+search-focused-match-foreground = '#121314'
+search-focused-match-background = '#cd9731'
+hint-foreground = '#121314'
+hint-background = '#79c0ff'
+
+[developer]
+log-level = "WARN"
+enable-log-file = true
