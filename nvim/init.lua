@@ -512,23 +512,6 @@ if vim.g.profile == "self" then
 			opts = {},
 		},
 		{
-			"rcarriga/nvim-notify",
-			lazy = true,
-			event = "VeryLazy",
-			config = function()
-				local notify = require("notify")
-				notify.setup({
-					stages = "fade",
-					render = "default",
-					fps = 20,
-					timeout = 2000,
-					minimum_width = 50,
-					background_colour = "NotifyBackground",
-				})
-				vim.notify = notify
-			end,
-		},
-		{
 			"lewis6991/gitsigns.nvim",
 			lazy = true,
 			event = "VeryLazy",
@@ -575,88 +558,6 @@ if vim.g.profile == "self" then
 			},
 		},
 		{
-			"folke/todo-comments.nvim",
-			dependencies = { "nvim-lua/plenary.nvim" },
-			opts = {},
-			keys = {
-				{ "<leader>ft", "<Cmd>TodoFzfLua<CR>", desc = "Find Todos" },
-			},
-		},
-		{
-			"folke/trouble.nvim",
-			opts = {},
-			cmd = "Trouble",
-			keys = {
-				{
-					"<leader>xx",
-					"<Cmd>Trouble diagnostics toggle<CR>",
-					desc = "Diagnostics (Trouble)",
-				},
-				{
-					"<leader>xX",
-					"<Cmd>Trouble diagnostics toggle filter.buf=0<CR>",
-					desc = "Buffer Diagnostics (Trouble)",
-				},
-				{
-					"<leader>xL",
-					"<Cmd>Trouble loclist toggle<CR>",
-					desc = "Location List (Trouble)",
-				},
-			},
-		},
-		{
-			"brenoprata10/nvim-highlight-colors",
-			lazy = true,
-			event = "VeryLazy",
-			opts = {
-				render = "virtual",
-			},
-		},
-		{
-			"RRethy/vim-illuminate",
-			lazy = true,
-			event = "VeryLazy",
-			config = function()
-				require("illuminate").configure({
-					providers = {
-						"lsp",
-						"treesitter",
-						"regex",
-					},
-					delay = 100,
-					filetype_overrides = {},
-					filetypes_denylist = {
-						"dirbuf",
-						"dirvish",
-						"fugitive",
-					},
-					filetypes_allowlist = {},
-					modes_denylist = {},
-					modes_allowlist = {},
-					providers_regex_syntax_denylist = {},
-					providers_regex_syntax_allowlist = {},
-					under_cursor = true,
-					large_file_cutoff = 10000,
-					large_file_overrides = nil,
-					min_count_to_highlight = 1,
-					should_enable = function(bufnr)
-						return true
-					end,
-					case_insensitive_regex = false,
-					disable_keymaps = false,
-				})
-			end,
-		},
-		{
-			"nvim-tree/nvim-tree.lua",
-			cmd = { "NvimTreeToggle" },
-			opts = {},
-		},
-		{
-			"j-hui/fidget.nvim",
-			opts = {},
-		},
-		{
 			"folke/lazydev.nvim",
 			ft = "lua",
 			opts = {
@@ -668,48 +569,6 @@ if vim.g.profile == "self" then
 	}
 end
 
-local code2026_setup = {
-	"code-2026-theme/nvim",
-	lazy = false,
-	priority = 1000,
-	config = function()
-		require("code-2026").setup({
-			background = "dark",
-			transparent = false,
-			terminal_colors = false,
-			dim_inactive = false,
-			styles = {
-				comments = { italic = true },
-				keywords = {},
-				conditionals = {},
-				functions = {},
-				methods = {},
-				variables = {},
-				builtins = { italic = true },
-				parameters = {},
-				properties = {},
-				types = {},
-				strings = {},
-				numbers = {},
-				booleans = {},
-				constants = {},
-				operators = {},
-				namespaces = {},
-				macros = {},
-				attributes = {},
-				tags = {},
-				headings = { bold = true },
-				floats = "solid",
-			},
-			palette = {},
-			on_colors = function(colors) end,
-			highlights = {},
-			on_highlights = function(highlights, colors) end,
-			plugins = {}, -- e.g. { telescope = false }
-		})
-		vim.cmd.colorscheme("dark-2026")
-	end,
-}
 local catppuccin_setup = {
 	"catppuccin/nvim",
 	lazy = false,
@@ -906,36 +765,6 @@ local catppuccin_setup = {
 		vim.cmd.colorscheme("catppuccin")
 	end,
 }
-local kanagawa_setup = {
-	"rebelot/kanagawa.nvim",
-	config = function()
-		require("kanagawa").setup({
-			compile = false,
-			undercurl = true,
-			commentStyle = { italic = true },
-			functionStyle = {},
-			keywordStyle = { italic = true },
-			statementStyle = { bold = true },
-			typeStyle = {},
-			transparent = false,
-			dimInactive = false,
-			terminalColors = true,
-			colors = {
-				palette = {},
-				theme = { wave = {}, lotus = {}, dragon = {}, all = {} },
-			},
-			overrides = function(colors)
-				return {}
-			end,
-			theme = "dragon",
-			background = {
-				dark = "dragon",
-				light = "lotus",
-			},
-		})
-		vim.cmd.colorscheme("kanagawa")
-	end,
-}
 local nightfox_setup = {
 	"EdenEast/nightfox.nvim",
 	config = function()
@@ -982,53 +811,7 @@ local nightfox_setup = {
 		vim.cmd.colorscheme("nightfox")
 	end,
 }
-local github_theme_setup = {
-	"projekt0n/github-nvim-theme",
-	config = function()
-		require("github-theme").setup({
-			options = {
-				compile_path = vim.fn.stdpath("cache") .. "/github-theme",
-				compile_file_suffix = "_compiled",
-				hide_end_of_buffer = true,
-				hide_nc_statusline = true,
-				transparent = false,
-				terminal_colors = true,
-				dim_inactive = false,
-				module_default = true,
-				styles = {
-					comments = "NONE",
-					functions = "NONE",
-					keywords = "NONE",
-					variables = "NONE",
-					conditionals = "NONE",
-					constants = "NONE",
-					numbers = "NONE",
-					operators = "NONE",
-					strings = "NONE",
-					types = "NONE",
-				},
-				inverse = {
-					match_paren = false,
-					visual = false,
-					search = false,
-				},
-				darken = {
-					floats = true,
-					sidebars = {
-						enable = true,
-						list = {},
-					},
-				},
-				modules = {},
-			},
-			palettes = {},
-			specs = {},
-			groups = {},
-		})
-		vim.cmd.colorscheme("github_dark_default")
-	end,
-}
-local nordic_night_setup = {
+local nordic_setup = {
 	"AlexvZyl/nordic.nvim",
 	lazy = false,
 	priority = 1000,
@@ -1441,7 +1224,7 @@ local extra_plugins = {
 		mason_tool_installer_setup,
 	},
 	self = {
-		code2026_setup,
+		catppuccin_setup,
 		cmp_setup,
 		lsp_setup,
 		mason_lspconfig_setup,

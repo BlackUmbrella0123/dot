@@ -59,7 +59,7 @@
     "**/build": true,
     "**/*.min.js": true
   },
-  "extensions.autoUpdate": false,
+  "extensions.autoUpdate": "off",
   "extensions.autoCheckUpdates": false,
   "telemetry.telemetryLevel": "off",
   "extensions.experimental.affinity": {
