@@ -209,7 +209,7 @@
   //
   // === PLUGIN: Github Theme ===
   //
-  "workbench.colorTheme": "GitHub Light",
+  // "workbench.colorTheme": "GitHub Light",
   //
   // === PLUGIN: Catppuccin ===
   //
