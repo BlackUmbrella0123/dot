@@ -1,5 +1,7 @@
 {
-  // Builtin
+  //
+  // === BUILTIN ===
+  //
   "editor.fontFamily": "'JetBrainsMono Nerd Font', Monaco, menlo, Consolas",
   "editor.fontSize": 13,
   "editor.tabSize": 2,
@@ -71,7 +73,9 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  // Vim
+  // 
+  // === PLUGIN: VscodeVim ===
+  //
   "vim.leader": "<space>",
   "vim.hlsearch": true,
   "vim.showcmd": false,
@@ -80,58 +84,174 @@
   "vim.highlightedyank.duration": 1000,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "k"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "k"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindingsNonRecursive": [
     {
-      "before": ["<leader>", "<leader>"],
-      "commands": ["workbench.action.showCommands"]
+      "before": [
+        "<leader>",
+        "<leader>"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ]
     },
     {
-      "before": ["<C-h>"],
-      "after": ["<C-w>", "h"]
+      "before": [
+        "<C-h>"
+      ],
+      "after": [
+        "<C-w>",
+        "h"
+      ]
     },
     {
-      "before": ["<C-j>"],
-      "after": ["<C-w>", "j"]
+      "before": [
+        "<C-j>"
+      ],
+      "after": [
+        "<C-w>",
+        "j"
+      ]
     },
     {
-      "before": ["<C-k>"],
-      "after": ["<C-w>", "k"]
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "<C-w>",
+        "k"
+      ]
     },
     {
-      "before": ["<C-l>"],
-      "after": ["<C-w>", "l"]
+      "before": [
+        "<C-l>"
+      ],
+      "after": [
+        "<C-w>",
+        "l"
+      ]
     },
     {
-      "before": ["<leader>", "f", "b"],
-      "commands": ["workbench.action.showAllEditorsByMostRecentlyUsed"]
+      "before": [
+        "<leader>",
+        "f",
+        "b"
+      ],
+      "commands": [
+        "workbench.action.showAllEditorsByMostRecentlyUsed"
+      ]
     },
     {
-      "before": ["<leader>", "f", "n"],
-      "commands": ["workbench.action.toggleSidebarVisibility"]
+      "before": [
+        "<leader>",
+        "f",
+        "n"
+      ],
+      "commands": [
+        "workbench.action.toggleSidebarVisibility"
+      ]
     },
     {
-      "before": ["<leader>", "f", "f"],
-      "commands": ["workbench.action.quickOpen"]
+      "before": [
+        "<leader>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ]
     },
     {
-      "before": ["<leader>", "f", "o"],
-      "commands": ["workbench.action.gotoSymbol"]
+      "before": [
+        "<leader>",
+        "f",
+        "o"
+      ],
+      "commands": [
+        "workbench.action.gotoSymbol"
+      ]
     },
     {
-      "before": ["<leader>", "f", "O"],
-      "commands": ["workbench.action.showAllSymbols"]
+      "before": [
+        "<leader>",
+        "f",
+        "O"
+      ],
+      "commands": [
+        "workbench.action.showAllSymbols"
+      ]
     },
     {
-      "before": ["<leader>", "f", "w"],
-      "commands": ["workbench.action.findInFiles"]
+      "before": [
+        "<leader>",
+        "f",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ]
     },
     {
-      "before": ["<leader>", "t", "n"],
-      "commands": ["workbench.view.explorer"]
+      "before": [
+        "<leader>",
+        "t",
+        "n"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ]
     }
-  ]
+  ],
+  //
+  // === PLUGIN: Github Theme ===
+  //
+  "workbench.colorTheme": "GitHub Light",
+  //
+  // === PLUGIN: Catppuccin ===
+  //
+  // "workbench.colorTheme": "Catppuccin Macchiato",
+  // "catppuccin.accentColor": "lavender",
+  // "catppuccin.boldKeywords": true,
+  // "catppuccin.bracketMode": "rainbow",
+  // "catppuccin.colorOverrides": {},
+  // "catppuccin.customUIColors": {
+  //   "macchiato": {
+  //     "editorLineNumber.activeForeground": "green",
+  //     "editorLineNumber.foreground": "surface1",
+  //     "widget.border": "accent",
+  //   },
+  // },
+  // "catppuccin.extraBordersEnabled": true,
+  // "catppuccin.italicComments": false,
+  // "catppuccin.italicKeywords": false,
+  // "catppuccin.syncWithIconPack": true,
+  // "catppuccin.workbenchMode": "default",
+  //
+  // === PLUGIN: Catppuccin Icon ===
+  //
+  // "workbench.iconTheme": "catppuccin-macchiato",
+  // "catppuccin-icons.associations.extensions": {},
+  // "catppuccin-icons.associations.files": {},
+  // "catppuccin-icons.associations.folders": {},
+  // "catppuccin-icons.associations.languages": {},
+  // "catppuccin-icons.hidesExplorerArrows": false,
+  // "catppuccin-icons.monochrome": false,
+  // "catppuccin-icons.specificFolders": true,
+  //
+  // === Jupyter ===
+  //
+  "notebook.cellFocusIndicator": "border",
+  "notebook.compactView": false,
+  "notebook.lineNumbers": "on",
+  "notebook.insertToolbarLocation": "notebookToolbar",
+  "notebook.showCellStatusBar": "visibleAfterExecute",
+  "notebook.output.scrolling": true,
 }
