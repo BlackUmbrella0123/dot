@@ -92,9 +92,9 @@ main() {
     log_skip "Neovim"
   fi
 
-  # Rio
-  if has_cmd rio; then
-    make_link "$DOT_DIR/rio/config.toml" "$HOME/.config/rio/config.toml"
+  # Rex
+  if has_cmd rex || has_app "Rex"; then
+    make_link "$DOT_DIR/rex/init.lua" "$HOME/.config/rex/init.lua"
   else
     log_skip "Rio"
   fi

@@ -363,10 +363,10 @@ function Invoke-DotfilesSetup {
       }
     },
     @{
-      Name      = "Rio"
+      Name      = "Rex"
       Installed = { Test-Command nvim }
       Links     = [ordered]@{
-        "$dotfilesRoot\rio\config.toml" = "$env:LOCALAPPDATA\rio\config.toml"
+        "$dotfilesRoot\rex\init.lua" = "$env:APPDATA\rex\init.lua"
       }
     },
     @{
