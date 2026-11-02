@@ -69,6 +69,17 @@
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "workbench.colorCustomizations": {
+    "[Dark 2026]": {
+      "editorHoverWidget.border": "#79c0ff",
+    },
+    "[Light 2026]": {
+      "editorHoverWidget.border": "#0550ae",
+    },
+    "[Catppuccin Mocha]": {
+      "editorHoverWidget.border": "#89b4fa",
+    },
+  },
   // 
   // === PLUGIN: VscodeVim ===
   //
