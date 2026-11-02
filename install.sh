@@ -112,6 +112,14 @@ main() {
     log_skip "VSCode"
   fi
 
+  # Zed
+  if has_cmd zed || has_app "Zed"; then
+    make_link "$DOT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+    make_link "$DOT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+  else
+    log_skip "VSCode"
+  fi
+
 }
 
 main "$@"

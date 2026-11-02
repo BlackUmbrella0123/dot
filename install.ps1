@@ -381,6 +381,14 @@ function Invoke-DotfilesSetup {
         "$dotfilesRoot\vscode\keybindings.json" = "$env:APPDATA\Code\User\keybindings.json"
         "$dotfilesRoot\vscode\settings.json"    = "$env:APPDATA\Code\User\settings.json"
       }
+    },
+    @{
+      Name      = "Zed"
+      Installed = { Test-Command zed }
+      Links     = [ordered]@{
+        "$dotfilesRoot\zed\keymap.json" = "$env:APPDATA\Zed\keybindings.json"
+        "$dotfilesRoot\zed\settings.json"    = "$env:APPDATA\Zed\settings.json"
+      }
     }
   )
 
