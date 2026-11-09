@@ -23,14 +23,17 @@
   "gulp.autoDetect": "off",
   "grunt.autoDetect": "off",
   "jake.autoDetect": "off",
-  "window.zoomLevel": -0.39,
+  "window.zoomLevel": -0.65,
   "explorer.autoReveal": false,
+  "workbench.activityBar.compact": true,
+  "workbench.settings.alwaysShowAdvancedSettings": true,
   "workbench.startupEditor": "none",
   "workbench.enableExperiments": false,
   "workbench.editor.limit.enabled": true,
   "workbench.editor.limit.value": 10,
-  "window.titleBarStyle": "custom",
   "window.restoreWindows": "none",
+  "window.density.editorTabHeight": "compact",
+  "window.density.layout": "compact",
   "update.mode": "manual",
   "terminal.integrated.cursorBlinking": false,
   "terminal.integrated.gpuAcceleration": "on",
@@ -81,7 +84,7 @@
     },
   },
   // 
-  // === PLUGIN: VscodeVim ===
+  // === PLUGIN: VSCodeVim ===
   //
   "vim.leader": "<space>",
   "vim.hlsearch": true,
@@ -261,4 +264,5 @@
   "notebook.insertToolbarLocation": "notebookToolbar",
   "notebook.showCellStatusBar": "visibleAfterExecute",
   "notebook.output.scrolling": true,
+  "workbench.editor.pinnedTabSizing": "compact",
 }
