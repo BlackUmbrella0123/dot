@@ -364,7 +364,7 @@ function Invoke-DotfilesSetup {
     },
     @{
       Name      = "Rex"
-      Installed = { Test-Command nvim }
+      Installed = { Test-Command rex }
       Links     = [ordered]@{
         "$dotfilesRoot\rex\init.lua" = "$env:APPDATA\rex\init.lua"
       }
