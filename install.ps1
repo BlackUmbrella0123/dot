@@ -381,7 +381,7 @@ function Invoke-DotfilesSetup {
         "$dotfilesRoot\vscode\keybindings.json" = "$env:APPDATA\Code\User\keybindings.json"
         "$dotfilesRoot\vscode\settings.json"    = "$env:APPDATA\Code\User\settings.json"
       }
-    },
+    }
   )
 
   $failed = 0
