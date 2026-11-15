@@ -96,7 +96,7 @@ main() {
   if has_cmd rex || has_app "Rex"; then
     make_link "$DOT_DIR/rex/init.lua" "$HOME/.config/rex/init.lua"
   else
-    log_skip "Rio"
+    log_skip "rex"
   fi
 
   # VSCode
