@@ -388,7 +388,7 @@ function Invoke-DotfilesSetup {
       Links     = [ordered]@{
         "$dotfilesRoot\wezterm\wezterm.lua" = "$env:USERPROFILE\.config\wezterm\wezterm.lua"
       }
-    },
+    }
   )
 
   $failed = 0
