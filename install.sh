@@ -111,6 +111,14 @@ main() {
   else
     log_skip "VSCode"
   fi
+
+  # WezTerm
+  if has_cmd wezterm || has_app "WezTerm"; then
+    make_link "$DOT_DIR/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
+  else
+    log_skip "WezTerm"
+  fi
+
 }
 
 main "$@"

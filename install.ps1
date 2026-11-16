@@ -381,7 +381,14 @@ function Invoke-DotfilesSetup {
         "$dotfilesRoot\vscode\keybindings.json" = "$env:APPDATA\Code\User\keybindings.json"
         "$dotfilesRoot\vscode\settings.json"    = "$env:APPDATA\Code\User\settings.json"
       }
-    }
+    },
+    @{
+      Name      = "WezTerm"
+      Installed = { Test-Command wezterm }
+      Links     = [ordered]@{
+        "$dotfilesRoot\wezterm\wezterm.lua" = "$env:USERPROFILE\.config\wezterm\wezterm.lua"
+      }
+    },
   )
 
   $failed = 0
