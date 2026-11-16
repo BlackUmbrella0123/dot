@@ -3,7 +3,7 @@ local config = wezterm.config_builder()
 local platform = wezterm.target_triple
 
 if platform:find("windows") then
-	config.default_prog = { "pwsh.exe", "-NoLogo" }
+	config.default_prog = { "powershell.exe", "-NoLogo" }
 	config.font_size = 10.0
 	config.font = wezterm.font_with_fallback({
 		"JetBrains Mono",
@@ -39,6 +39,9 @@ else
 end
 
 config.default_cwd = wezterm.home_dir
+config.line_height = 1.2
+config.cursor_blink_rate = 0
+config.default_cursor_style = "SteadyBar"
 config.color_scheme = "Catppuccin Mocha"
 config.colors = {
 	background = "#11111b",
