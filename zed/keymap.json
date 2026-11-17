@@ -1,0 +1,24 @@
+[
+  {
+    "context": "Workspace",
+    "bindings": {
+      "shift shift": "file_finder::Toggle"
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == normal",
+    "bindings": {
+      "space space": "command_palette::Toggle",
+      "space f o": "outline::Toggle",
+      "space f w": "text_finder::Toggle",
+      "space f f": "file_finder::Toggle",
+      "space f s": "buffer_search::Deploy",
+    }
+  },
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j k": "vim::NormalBefore"
+    },
+  },
+]

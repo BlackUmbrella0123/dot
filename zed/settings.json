@@ -1,0 +1,50 @@
+{
+  "proxy": "",
+  "soft_wrap_indent": "same",
+  "tab_size": 2,
+  "vim": {
+    "cursor_shape": {
+      "insert": "bar"
+    },
+    "highlight_on_yank_duration": 1000,
+    "gdefault": false,
+    "use_smartcase_find": true,
+    "toggle_relative_line_numbers": true
+  },
+  "horizontal_scroll_margin": 1.0,
+  "vertical_scroll_margin": 1.0,
+  "which_key": {
+    "enabled": true
+  },
+  "vim_mode": true,
+  "base_keymap": "Emacs",
+  "show_wrap_guides": false,
+  "minimum_contrast_for_highlights": 50.0,
+  "reduce_motion": "on",
+  "cursor_shape": "block",
+  "cursor_animation": {
+    "enabled": false
+  },
+  "cursor_blink": false,
+  "markdown_preview": {
+    "heading_font_weight": 600.0
+  },
+  "ui_font_weight": 500.0,
+  "buffer_line_height": {
+    "custom": 1.6180000305175781
+  },
+  "buffer_font_weight": 500.0,
+  "suggest_extensions": true,
+  "auto_update": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false,
+    "anthropic_retention": false
+  },
+  "session": {
+    "trust_all_worktrees": true
+  },
+  "ui_font_size": 15.0,
+  "buffer_font_size": 13.0,
+  "theme": "One Dark",
+}

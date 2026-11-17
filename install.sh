@@ -85,6 +85,14 @@ main() {
   OS=$(detect_os)
   DOT_DIR=$(cd "$(dirname "$0")" && pwd)
 
+  # Emacs
+  if has_cmd emacs; then
+    make_link "$DOT_DIR/emacs/early-init.el" "$HOME/.config/emacs/early-init.el"
+    make_link "$DOT_DIR/emacs/init.el" "$HOME/.config/emacs/init.el"
+  else
+    log_skip "Emacs"
+  fi
+
   # Neovim
   if has_cmd nvim; then
     make_link "$DOT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
@@ -117,6 +125,14 @@ main() {
     make_link "$DOT_DIR/wezterm/wezterm.lua" "$HOME/.config/wezterm/wezterm.lua"
   else
     log_skip "WezTerm"
+  fi
+
+  # Zed
+  if has_cmd zed || has_app "Zed"; then
+    make_link "$DOT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+    make_link "$DOT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+  else
+    log_skip "Zed"
   fi
 
 }
