@@ -363,13 +363,6 @@ function Invoke-DotfilesSetup {
       }
     },
     @{
-      Name      = "Rex"
-      Installed = { Test-Command rex }
-      Links     = [ordered]@{
-        "$dotfilesRoot\rex\init.lua" = "$env:APPDATA\rex\init.lua"
-      }
-    },
-    @{
       Name      = "VSCode"
       Installed = {
         (Test-Command code) -or (Test-AnyPath @(
