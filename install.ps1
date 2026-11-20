@@ -381,6 +381,13 @@ function Invoke-DotfilesSetup {
       Links     = [ordered]@{
         "$dotfilesRoot\wezterm\wezterm.lua" = "$env:USERPROFILE\.config\wezterm\wezterm.lua"
       }
+    },
+    @{
+      Name      = "Windows Terminal"
+      Installed = { Test-Command wt }
+      Links     = [ordered]@{
+        "$dotfilesRoot\wt\settings.json" = "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+      }
     }
   )
 

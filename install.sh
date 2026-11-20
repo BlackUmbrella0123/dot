@@ -93,6 +93,17 @@ main() {
     log_skip "Emacs"
   fi
 
+  # Ghostty
+  if has_cmd ghostty || has_app "Ghostty"; then
+    if [ "$OS" = "macOS" ]; then
+      make_link "$DOT_DIR/ghostty/config.ghostty" "$HOME/Library/Application Support/com.mitchellh.ghostty/config.ghostty"
+    else
+      make_link "$DOT_DIR/ghostty/config.ghostty" "$HOME/.config/ghostty/config.ghostty"
+    fi
+  else
+    log_skip "Ghostty"
+  fi
+
   # Neovim
   if has_cmd nvim; then
     make_link "$DOT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
