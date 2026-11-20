@@ -138,6 +138,14 @@ main() {
     log_skip "WezTerm"
   fi
 
+  # Zed
+  if has_cmd zed; then
+    make_link "$DOT_DIR/zed/keymap.json" "$HOME/.config/zed/keymap.json"
+    make_link "$DOT_DIR/zed/settings.json" "$HOME/.config/zed/settings.json"
+  else
+    log_skip "Zed"
+  fi
+
 }
 
 main "$@"

@@ -386,7 +386,15 @@ function Invoke-DotfilesSetup {
       Name      = "Windows Terminal"
       Installed = { Test-Command wt }
       Links     = [ordered]@{
-        "$dotfilesRoot\wt\settings.json" = "%LOCALAPPDATA%\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+        "$dotfilesRoot\wt\settings.json" = "$env:LOCALAPPDATA\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
+      }
+    },
+    @{
+      Name      = "Zed"
+      Installed = { Test-Command zed }
+      Links     = [ordered]@{
+        "$dotfilesRoot\zed\keymap.json" = "$env:APPDATA\Zed\keymap.json"
+        "$dotfilesRoot\zed\settings.json" = "$env:APPDATA\Zed\settings.json"
       }
     }
   )
