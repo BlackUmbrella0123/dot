@@ -85,11 +85,26 @@ main() {
   OS=$(detect_os)
   DOT_DIR=$(cd "$(dirname "$0")" && pwd)
 
+  # Emacs
+  if has_cmd emacs; then
+    make_link "$DOT_DIR/emacs/early-init.el" "$HOME/.config/emacs/early-init.el"
+    make_link "$DOT_DIR/emacs/init.el" "$HOME/.config/emacs/init.el"
+  else
+    log_skip "Emacs"
+  fi
+
   # Neovim
   if has_cmd nvim; then
     make_link "$DOT_DIR/nvim/init.lua" "$HOME/.config/nvim/init.lua"
   else
     log_skip "Neovim"
+  fi
+
+  # Rex
+  if has_cmd rex; then
+    make_link "$DOT_DIR/rex/init.lua" "$HOME/.config/rex/init.lua"
+  else
+    log_skip "Rex"
   fi
 
   # VSCode
