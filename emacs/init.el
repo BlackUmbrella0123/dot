@@ -1,4 +1,4 @@
-;;; init.el --- My Emacs Configuration.	-*- lexical-binding: t no-byte-compile: t -*-
+;;; init.el --- My Emacs Configuration. -*- lexical-binding: t no-byte-compile: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -13,9 +13,9 @@
 ;;; Core
 (when (eq system-type 'darwin)
   (setenv "MACOSX_DEPLOYMENT_TARGET"
-	        (string-trim
-	         (shell-command-to-string
-	          "sw_vers -productVersion"))))
+          (string-trim
+           (shell-command-to-string
+            "sw_vers -productVersion"))))
 
 (use-package use-package
   :ensure nil
@@ -32,8 +32,8 @@
   :config
   (package-initialize)
   (setq package-archives '(("gnu" . "https://elpa.gnu.org/packages/")
-			                     ("nongnu" . "https://elpa.nongnu.org/nongnu/")
-			                     ("melpa" . "https://melpa.org/packages/")))
+                           ("nongnu" . "https://elpa.nongnu.org/nongnu/")
+                           ("melpa" . "https://melpa.org/packages/")))
   (setq package-quickstart t))
 
 (use-package emacs

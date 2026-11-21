@@ -19,7 +19,7 @@
 (setq default-frame-alist
       '((menu-bar-lines . 0)
         (tool-bar-lines . 0)
-	(internal-border-width . 12)
+        (internal-border-width . 12)
         (horizontal-scroll-bars)
         (vertical-scroll-bars)))
 (when (featurep 'ns)
@@ -44,13 +44,13 @@
   (when (display-graphic-p)
     ;; Set default font
     (cl-loop for font in '("Jetbrains Mono"
-			   "JetBrainsMono Nerd Font"
+                           "JetBrainsMono Nerd Font"
                            "SF Mono"
-			   "Menlo"
-			   "Hack"
-			   "Source Code Pro"
+                           "Menlo"
+                           "Hack"
+                           "Source Code Pro"
                            "Monaco"
-			   "Consolas")
+                           "Consolas")
              when (find-font (font-spec :name font))
              return (set-face-attribute 'default nil
                                         :family font
@@ -60,10 +60,10 @@
 
     ;; Set mode-line font
     (cl-loop for font in '("Jetbrains Mono"
-			   "JetBrainsMono Nerd Font"
-			   "Arial"
-			   "Helvetica"
-			   "Times New Roman")
+                           "JetBrainsMono Nerd Font"
+                           "Arial"
+                           "Helvetica"
+                           "Times New Roman")
              when (find-font (font-spec :name font))
              return (progn
                       (set-face-attribute 'mode-line nil :family font :inherit 'variable-pitch)
@@ -71,26 +71,26 @@
 
     ;; Specify font for all unicode characters
     (cl-loop for font in '("Apple Symbols"
-			   "Segoe UI Symbol"
-			   "Symbola"
-			   "Symbol")
+                           "Segoe UI Symbol"
+                           "Symbola"
+                           "Symbol")
              when (find-font (font-spec :name font))
              return (set-fontset-font t 'symbol (font-spec :family font) nil 'prepend))
 
     ;; Specify font for Emoji characters
     (cl-loop for font in '("Noto Color Emoji"
-			   "Apple Color Emoji"
-			   "Segoe UI Emoji")
+                           "Apple Color Emoji"
+                           "Segoe UI Emoji")
              when (find-font (font-spec :name font))
              return (set-fontset-font t 'emoji (font-spec :family font) nil 'prepend))
 
     ;; Specify font for Chinese characters
     (cl-loop for font in '("LXGW Neo Xihei"
-			   "LXGW WenKai Mono"
-			   "WenQuanYi Micro Hei Mono"
+                           "LXGW WenKai Mono"
+                           "WenQuanYi Micro Hei Mono"
                            "PingFang SC"
-			   "Microsoft Yahei UI"
-			   "Simhei")
+                           "Microsoft Yahei UI"
+                           "Simhei")
              when (find-font (font-spec :name font))
              return (progn
                       (setq face-font-rescale-alist `((,font . 1.3)))
