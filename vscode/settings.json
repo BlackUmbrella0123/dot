@@ -227,34 +227,39 @@
   //
   // === PLUGIN: Catppuccin ===
   //
-  // "workbench.colorTheme": "Catppuccin Macchiato",
-  // "catppuccin.accentColor": "lavender",
-  // "catppuccin.boldKeywords": true,
-  // "catppuccin.bracketMode": "rainbow",
-  // "catppuccin.colorOverrides": {},
-  // "catppuccin.customUIColors": {
-  //   "macchiato": {
-  //     "editorLineNumber.activeForeground": "green",
-  //     "editorLineNumber.foreground": "surface1",
-  //     "widget.border": "accent",
-  //   },
-  // },
-  // "catppuccin.extraBordersEnabled": true,
-  // "catppuccin.italicComments": false,
-  // "catppuccin.italicKeywords": false,
-  // "catppuccin.syncWithIconPack": true,
-  // "catppuccin.workbenchMode": "default",
+  "workbench.colorTheme": "Catppuccin Mocha",
+  "catppuccin.accentColor": "lavender",
+  "catppuccin.boldKeywords": true,
+  "catppuccin.bracketMode": "rainbow",
+  "catppuccin.colorOverrides": {
+    "mocha": {
+      "base": "#11111b",
+      "mantle": "#11111b",
+    }
+  },
+  "catppuccin.customUIColors": {
+    "macchiato": {
+      "editorLineNumber.activeForeground": "green",
+      "editorLineNumber.foreground": "surface1",
+      "widget.border": "accent",
+    },
+  },
+  "catppuccin.extraBordersEnabled": true,
+  "catppuccin.italicComments": false,
+  "catppuccin.italicKeywords": false,
+  "catppuccin.syncWithIconPack": true,
+  "catppuccin.workbenchMode": "default",
   //
   // === PLUGIN: Catppuccin Icon ===
   //
-  // "workbench.iconTheme": "catppuccin-macchiato",
-  // "catppuccin-icons.associations.extensions": {},
-  // "catppuccin-icons.associations.files": {},
-  // "catppuccin-icons.associations.folders": {},
-  // "catppuccin-icons.associations.languages": {},
-  // "catppuccin-icons.hidesExplorerArrows": false,
-  // "catppuccin-icons.monochrome": false,
-  // "catppuccin-icons.specificFolders": true,
+  "workbench.iconTheme": "catppuccin-mocha",
+  "catppuccin-icons.associations.extensions": {},
+  "catppuccin-icons.associations.files": {},
+  "catppuccin-icons.associations.folders": {},
+  "catppuccin-icons.associations.languages": {},
+  "catppuccin-icons.hidesExplorerArrows": false,
+  "catppuccin-icons.monochrome": false,
+  "catppuccin-icons.specificFolders": true,
   //
   // === PLUGIN: Jupyter ===
   //
